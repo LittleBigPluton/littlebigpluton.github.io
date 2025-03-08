@@ -4,260 +4,78 @@
     <title>Umut Gökdemir</title>
     <link>https://umutgokdemir.com/</link>
     <description>Recent content on Umut Gökdemir</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 14 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://umutgokdemir.com/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Minimalist Hugo Template for Academic Websites</title>
-      <link>https://umutgokdemir.com/d5/</link>
-      <pubDate>Sun, 14 Apr 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://umutgokdemir.com/d5/</guid>
-      <description>This template produces a personal academic website with Hugo. The website has a minimalist design and is hosted on GitHub Pages.</description>
-    </item>
-    
-    <item>
-      <title>Minimalist LaTeX Template for Academic Papers</title>
-      <link>https://umutgokdemir.com/d2/</link>
-      <pubDate>Tue, 02 Apr 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://umutgokdemir.com/d2/</guid>
-      <description>This template produces an academic paper with LaTeX. The paper follows typographical best practices and has a minimalist design.</description>
-    </item>
-    
-    <item>
-      <title>Office Hours</title>
-      <link>https://umutgokdemir.com/officehours/</link>
-      <pubDate>Thu, 28 Mar 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://umutgokdemir.com/officehours/</guid>
-      <description>Schedule and location of Prof. Michaillat&amp;#39;s office hours at the University of California, Santa Cruz.</description>
-    </item>
-    
+    <generator>Hugo -- 0.92.2</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 18 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://umutgokdemir.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Location</title>
       <link>https://umutgokdemir.com/location/</link>
-      <pubDate>Fri, 22 Mar 2024 00:00:00 +0000</pubDate>
-      
+      <pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate>
       <guid>https://umutgokdemir.com/location/</guid>
       <description>Umut Gökdemir&amp;#39;s office address at the Universität Regensburg, Germany.</description>
     </item>
-    
     <item>
-      <title>Critical Values Robust to P-hacking</title>
-      <link>https://umutgokdemir.com/12/</link>
-      <pubDate>Mon, 04 Mar 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://umutgokdemir.com/12/</guid>
-      <description>This paper builds a model of hypothesis testing with p-hacking and gives critical values that correct the inflated type 1 error rate caused by p-hacking.</description>
+      <title>Your Inner Hedgehog</title>
+      <link>https://umutgokdemir.com/papers/paper3/</link>
+      <pubDate>Tue, 06 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://umutgokdemir.com/papers/paper3/</guid>
+      <description>This paper describes the inner hedgehog, a psychological condition widespread in academia. Published in the Journal of Socio-Experimental Psychology, 2021.</description>
     </item>
-    
     <item>
-      <title>Unemployment</title>
-      <link>https://umutgokdemir.com/c1/</link>
-      <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://umutgokdemir.com/c1/</guid>
-      <description>This course presents a matching model of unemployment and uses it to study unemployment fluctuations, job rationing, and labor market policies.</description>
+      <title>List of Irregular Verbs Across Romance Languages</title>
+      <link>https://umutgokdemir.com/data/data1/</link>
+      <pubDate>Thu, 07 Mar 2013 00:00:00 +0000</pubDate>
+      <guid>https://umutgokdemir.com/data/data1/</guid>
+      <description>This dataset contains all irregular verbs in known Romance languages.</description>
     </item>
-    
-    
     <item>
-      <title>Moen Meets Rotemberg: An Earthly Model of the Divine Coincidence</title>
-      <link>https://umutgokdemir.com/15/</link>
-      <pubDate>Sat, 20 Jan 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://umutgokdemir.com/15/</guid>
-      <description>This paper develops a simple business-cycle model with divine coincidence: inflation is on target when unemployment is efficient.</description>
+      <title>Unusual Uses For Olive Oil</title>
+      <link>https://umutgokdemir.com/papers/paper1/</link>
+      <pubDate>Tue, 15 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>https://umutgokdemir.com/papers/paper1/</guid>
+      <description>This paper reviews unusual uses for olive oil throughout the Mediterranean world. Published in the Journal of Oleic Science, 2013.</description>
     </item>
-    
     <item>
-      <title>Economic Slack</title>
-      <link>https://umutgokdemir.com/c2/</link>
-      <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://umutgokdemir.com/c2/</guid>
-      <description>This graduate course presents matching models of economic slack and uses them to study business-cycle fluctuations, monetary policy, and fiscal policy.</description>
+      <title>The Finer Points of Sausage Dogs</title>
+      <link>https://umutgokdemir.com/papers/paper2/</link>
+      <pubDate>Tue, 28 Dec 2004 00:00:00 +0000</pubDate>
+      <guid>https://umutgokdemir.com/papers/paper2/</guid>
+      <description>This paper studies the pulmonary efficiency of sausage dogs. Published in the Journal of Canine Science, 2004.</description>
     </item>
-    
     <item>
-      <title>Slackish Business Cycles</title>
-      <link>https://umutgokdemir.com/b1/</link>
-      <pubDate>Fri, 12 Jan 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://umutgokdemir.com/b1/</guid>
-      <description>This book reviews facts about business cycles, develops a matching model to explain them, and discusses how monetary and fiscal policy can stabilize them.</description>
+      <title>Lectures at the Villa of Reduced Circumstances</title>
+      <link>https://umutgokdemir.com/courses/course1/</link>
+      <pubDate>Mon, 10 Mar 2003 00:00:00 +0000</pubDate>
+      <guid>https://umutgokdemir.com/courses/course1/</guid>
+      <description>This graduate course presents classical results in Romance philology.</description>
     </item>
-    
     <item>
-      <title>Business Cycles and How to Tame Them</title>
-      <link>https://umutgokdemir.com/c5/</link>
-      <pubDate>Fri, 08 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://umutgokdemir.com/c5/</guid>
-      <description>This minicourse describes business cycles, develops a matching model to explain them, and discusses how monetary and fiscal policy can tame them.</description>
+      <title>Portugese Irregular Verbs</title>
+      <link>https://umutgokdemir.com/books/book1/</link>
+      <pubDate>Wed, 01 Jan 1997 00:00:00 +0000</pubDate>
+      <guid>https://umutgokdemir.com/books/book1/</guid>
+      <description>This book discusses Portugese irregular verbs in great details.</description>
     </item>
-    
     <item>
-      <title>Minimalist LaTeX Template for Academic Presentations</title>
-      <link>https://umutgokdemir.com/d1/</link>
-      <pubDate>Sat, 18 Nov 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://umutgokdemir.com/d1/</guid>
-      <description>This template produces an academic presentation with LaTeX and Beamer. The presentation follows typographical best practices and has a minimalist design.</description>
+      <title>Profanity in Early Irish</title>
+      <link>https://umutgokdemir.com/courses/course2/</link>
+      <pubDate>Sat, 16 Jun 1990 00:00:00 +0000</pubDate>
+      <guid>https://umutgokdemir.com/courses/course2/</guid>
+      <description>This undergraduate course discusses profanity in Early Irish.</description>
     </item>
-    
     <item>
-      <title>Modeling the Displacement of Native Workers by Immigrants</title>
-      <link>https://umutgokdemir.com/14/</link>
-      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://umutgokdemir.com/14/</guid>
-      <description>This paper explains why a wave of immigration reduces the employment rate of native workers, and why this reduction is larger in bad times.</description>
+      <title></title>
+      <link>https://umutgokdemir.com/officehours/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://umutgokdemir.com/officehours/</guid>
+      <description>#&amp;mdash; #title: &amp;ldquo;Office Hours&amp;rdquo; #date: 2024-05-08 #hidemeta: true #description: &amp;ldquo;Schedule and location for Professor Dr von Igelfeld&amp;rsquo;s office hours.&amp;rdquo; #&amp;mdash;
+ #&amp;mdash;
+Schedule  #Office hours take place on Wednesday at 10am.
+ #&amp;mdash;
+ Location  #By default meetings are in my office. I am also available for virtual meetings on Zoom.
+ #&amp;mdash;
+ Meeting material  #+ If we are meeting to discuss research, please send me a written description of the work #that you would like to discus.</description>
     </item>
-    
-    <item>
-      <title>LaTeX Commands to Write Math</title>
-      <link>https://umutgokdemir.com/d3/</link>
-      <pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://umutgokdemir.com/d3/</guid>
-      <description>This collection of commands makes it easy to write mathematical expressions with LaTeX while automatically respecting the rules of mathematical typography.</description>
-    </item>
-    
-    <item>
-      <title>MATLAB Script to Produce Scientific Figures</title>
-      <link>https://umutgokdemir.com/d4/</link>
-      <pubDate>Tue, 26 Sep 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://umutgokdemir.com/d4/</guid>
-      <description>This script produces a set of scientific figures with MATLAB. The figures adhere to best practices for the visual display of quantitative information.</description>
-    </item>
-    
-    <item>
-      <title>u* = √uv</title>
-      <link>https://umutgokdemir.com/13/</link>
-      <pubDate>Mon, 23 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://umutgokdemir.com/13/</guid>
-      <description>This paper shows that under simple but realistic assumptions the efficient unemployment rate is the geometric average of the unemployment and vacancy rates.</description>
-    </item>
-    
-    <item>
-      <title>An Economical Business-Cycle Model</title>
-      <link>https://umutgokdemir.com/7/</link>
-      <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://umutgokdemir.com/7/</guid>
-      <description>This paper develops a policy-oriented business-cycle model with fluctuating unemployment and long zero-lower-bound episodes. Published in OEP, 2022.</description>
-    </item>
-    
-    <item>
-      <title>Beveridgean Unemployment Gap</title>
-      <link>https://umutgokdemir.com/9/</link>
-      <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://umutgokdemir.com/9/</guid>
-      <description>This paper develops a formula for the unemployment gap based on the Beveridge curve. In the US the gap is countercyclical. Published in JPubE Plus, 2021.</description>
-    </item>
-    
-    <item>
-      <title>Pricing under Fairness Concerns</title>
-      <link>https://umutgokdemir.com/8/</link>
-      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://umutgokdemir.com/8/</guid>
-      <description>To explain price rigidity, this paper develops a model in which buyers care about the fairness of markups but cannot observe them. Published in JEEA, 2018.</description>
-    </item>
-    
-    <item>
-      <title>Resolving New Keynesian Anomalies with Wealth in the Utility Function</title>
-      <link>https://umutgokdemir.com/11/</link>
-      <pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://umutgokdemir.com/11/</guid>
-      <description>This paper resolves the New Keynesian model&amp;#39;s anomalies at the zero lower bound by introducing wealth in the utility function. Published in REStat, 2021.</description>
-    </item>
-    
-    <item>
-      <title>Optimal Public Expenditure with Inefficient Unemployment</title>
-      <link>https://umutgokdemir.com/6/</link>
-      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://umutgokdemir.com/6/</guid>
-      <description>This paper shows that public expenditure should deviate from the Samuelson rule to reduce the unemployment gap, when it exists. Published in REStud, 2018.</description>
-    </item>
-    
-    <item>
-      <title>Persistence of False Paradigms in Low-Power Sciences</title>
-      <link>https://umutgokdemir.com/10/</link>
-      <pubDate>Wed, 26 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://umutgokdemir.com/10/</guid>
-      <description>This paper develops a model of science. Due to homophily in promotions, false paradigms may persist when a science has low power. Published in PNAS, 2018.</description>
-    </item>
-    
-    <item>
-      <title>Intermediate Macroeconomics</title>
-      <link>https://umutgokdemir.com/c4/</link>
-      <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://umutgokdemir.com/c4/</guid>
-      <description>This undergraduate course covers IS-LM model of business cycles, matching model of unemployment, inflation, and Malthusian and Solowian models of growth.</description>
-    </item>
-    
-    <item>
-      <title>A Macroeconomic Approach to Optimal Unemployment Insurance: Applications</title>
-      <link>https://umutgokdemir.com/5/</link>
-      <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://umutgokdemir.com/5/</guid>
-      <description>This paper studies how the generosity of unemployment insurance should vary over the business cycle in the United States. Published in AEJ Policy, 2018.</description>
-    </item>
-    
-    <item>
-      <title>A Macroeconomic Approach to Optimal Unemployment Insurance: Theory</title>
-      <link>https://umutgokdemir.com/4/</link>
-      <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://umutgokdemir.com/4/</guid>
-      <description>This paper develops a theory of optimal unemployment insurance in matching models. Published in AEJ Policy, 2018.</description>
-    </item>
-    
-    <item>
-      <title>Aggregate Demand, Idle Time, and Unemployment</title>
-      <link>https://umutgokdemir.com/3/</link>
-      <pubDate>Fri, 01 May 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://umutgokdemir.com/3/</guid>
-      <description>This paper develops a model of unemployment fluctuations in which the labor and product markets have a matching structure. Published in QJE, 2015.</description>
-    </item>
-    
-    <item>
-      <title>A Theory of Countercyclical Government Multiplier</title>
-      <link>https://umutgokdemir.com/2/</link>
-      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://umutgokdemir.com/2/</guid>
-      <description>This paper develops a New Keynesian model in which the government multiplier doubles when unemployment rises from 5% to 8%. Published in AEJ Macro, 2014.</description>
-    </item>
-    
-    <item>
-      <title>Mathematics for Macroeconomics</title>
-      <link>https://umutgokdemir.com/c3/</link>
-      <pubDate>Tue, 01 Oct 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://umutgokdemir.com/c3/</guid>
-      <description>This graduate course covers basic mathematical methods for macroeconomics: dynamic programming, optimal control, and differential equations.</description>
-    </item>
-    
-    <item>
-      <title>Do Matching Frictions Explain Unemployment? Not in Bad Times</title>
-      <link>https://umutgokdemir.com/1/</link>
-      <pubDate>Fri, 01 Jun 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://umutgokdemir.com/1/</guid>
-      <description>This paper proposes a matching model of the labor market with job rationing: unemployment persists even without matching frictions. Published in AER, 2012.</description>
-    </item>
-    
   </channel>
 </rss>
