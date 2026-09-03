@@ -1,0 +1,657 @@
+{{ define "main" }}
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .portfolio-anchor {
+    scroll-margin-top: 5.5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+</style>
+
+<main id="top">
+
+  {{ $hero := .Site.Params.hero }}
+  {{ $featured := .Site.Params.featured_project }}
+  {{ $projects := .Site.Params.projects }}
+  {{ $skills := .Site.Params.skills }}
+  {{ $experience := .Site.Params.experience }}
+  {{ $education := .Site.Params.education }}
+  {{ $about := .Site.Params.about }}
+  {{ $contact := .Site.Params.contact }}
+
+  <!-- =========================================================
+       HERO
+       ========================================================= -->
+  <section class="bg-gray-200 dark:bg-gray-900">
+    <div class="px-4 py-14 mx-auto max-w-screen-xl lg:py-24">
+      <div class="grid gap-10 items-center lg:gap-16 lg:grid-cols-12">
+
+        <div class="px-2 text-center lg:col-span-7 lg:text-left">
+          <p class="mb-4 text-base font-semibold tracking-tight text-primary-600 dark:text-primary-300 md:text-lg">
+            {{ $hero.eyebrow }}
+          </p>
+
+          <h1 class="mb-5 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl xl:text-6xl dark:text-white">
+            {{ .Site.Title }}
+          </h1>
+
+          <h2 class="mb-6 text-xl font-medium text-gray-700 dark:text-gray-300 md:text-2xl">
+            {{ $hero.subtitle }}
+          </h2>
+
+          <p class="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-gray-700 lg:mx-0 xl:text-xl dark:text-gray-300">
+            {{ $hero.description }}
+          </p>
+
+          <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+            <a
+              href="{{ $hero.primary_button.url }}"
+              class="inline-flex items-center justify-center px-5 py-3 text-base font-semibold text-white bg-primary-600 rounded-lg transition hover:bg-primary-700 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+              {{ $hero.primary_button.text }}
+            </a>
+
+            <a
+              href="{{ $hero.secondary_button.url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center px-5 py-3 text-base font-semibold text-gray-900 bg-white rounded-lg border border-gray-300 transition hover:bg-gray-100 dark:bg-gray-800 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700">
+              {{ $hero.secondary_button.text }}
+            </a>
+          </div>
+
+          <div class="flex gap-5 justify-center mt-7 text-sm font-medium lg:justify-start">
+            {{ with .Site.Params.social_media.github }}
+              {{ if .enabled }}
+              <a href="{{ $.Site.Params.Social_media.Github.Url }}" class="text-gray-400 hover:text-gray-300">
+                  <span class="sr-only">GitHub</span>
+                  <svg class="w-7 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill-rule="evenodd"
+                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                            clip-rule="evenodd" />
+                  </svg>
+              </a>
+              {{ end }}
+            {{ end }}
+
+            {{ with .Site.Params.social_media.linkedin }}
+              {{ if .enabled }}
+              <a href="{{ $.Site.Params.Social_media.Linkedin.Url }}" class="text-gray-400 hover:text-gray-300">
+                  <span class="sr-only">LinkedIn</span>
+                  <svg class="w-7 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill-rule="evenodd"
+                            d="M20.3292112,2 C21.2519624,2 22,2.74752185 22,3.67078882 L22,20.3292112 C22,21.2519624 21.2524781,22 20.3292112,22 L3.67078882,22 C2.74803764,22 2,21.2524781 2,20.3292112 L2,3.67078882 C2,2.74803764 2.74752185,2 3.67078882,2 L20.3292112,2 Z M15.51875,9.5 C14.0993287,9.5 13.128125,10.127356 12.6956992,10.8562567 L12.625,10.9858333 L12.625,9.625 L9.91666667,9.625 L9.91666667,19.2083333 L12.8333333,19.2083333 L12.8333333,14.56625 C12.8333333,13.0104167 13.40625,12.0208333 14.7833333,12.0208333 C15.7330797,12.0208333 16.1315784,12.8606664 16.1644352,14.3580086 L16.1666667,14.56625 L16.1666667,19.2083333 L19.0833333,19.2083333 L19.0833333,13.9154167 C19.0833333,11.0575 18.3995833,9.5 15.51875,9.5 Z M7.83333333,9.5 L4.91666667,9.5 L4.91666667,19.0833333 L7.83333333,19.0833333 L7.83333333,9.5 Z M6.375,4.5 C5.33958333,4.5 4.5,5.33958333 4.5,6.375 C4.5,7.41041667 5.33958333,8.25 6.375,8.25 C7.41041667,8.25 8.25,7.41041667 8.25,6.375 C8.25,5.33958333 7.41041667,4.5 6.375,4.5 Z"
+                            clip-rule="evenodd" />
+                  </svg>
+              </a>
+              {{ end }}
+            {{ end }}
+          </div>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="mx-auto w-full max-w-sm lg:max-w-md">
+            {{ $heroImage := resources.Get $hero.image }}
+            {{ with $heroImage }}
+
+              {{ $image320 := .Resize "320x webp q85" }}
+              {{ $image480 := .Resize "480x webp q85" }}
+              {{ $image576 := .Resize "576x webp q85" }}
+
+              <img
+                src="{{ $image576.RelPermalink }}"
+                srcset="
+                  {{ $image320.RelPermalink }} 320w,
+                  {{ $image480.RelPermalink }} 480w,
+                  {{ $image576.RelPermalink }} 576w
+                "
+                sizes="(max-width: 640px) 320px,
+                       (max-width: 1024px) 480px,
+                       576px"
+                alt="{{ $hero.image_alt }}"
+                class="overflow-hidden mx-auto rounded-2xl shadow-xl hero-image"
+                width="{{ $image576.Width }}"
+                height="{{ $image576.Height }}"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async">
+
+            {{ end }}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       FEATURED WORK
+       ========================================================= -->
+  <section id="projects" class="portfolio-anchor px-4 py-16 mx-auto max-w-screen-xl lg:py-24">
+    <div class="grid gap-10 items-start lg:grid-cols-12 lg:gap-14">
+
+      <div class="lg:col-span-5">
+        <p class="mb-2 text-base font-semibold text-primary-600 dark:text-primary-300">
+          {{ $featured.eyebrow }}
+        </p>
+
+        <p class="mb-3 text-sm font-medium text-gray-500 dark:text-gray-400">
+          {{ $featured.category }}
+        </p>
+
+        <h2 class="mb-5 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
+          {{ $featured.title }}
+        </h2>
+
+        <p class="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
+          {{ $featured.description }}
+        </p>
+
+        <div class="flex flex-wrap gap-2 mt-6">
+          {{ range $featured.technologies }}
+            <span class="px-3 py-1 text-sm font-medium text-gray-700 bg-gray-100 rounded-full border border-gray-200 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-800">
+              {{ . }}
+            </span>
+          {{ end }}
+        </div>
+
+        <div class="flex flex-wrap gap-4 mt-8">
+          <a
+            href="{{ $featured.details }}"
+            class="inline-flex items-center justify-center px-5 py-3 text-base font-semibold text-white bg-primary-600 rounded-lg transition hover:bg-primary-700 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+            View project →
+          </a>
+
+          <a
+            href="{{ $featured.github }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-5 py-3 font-semibold text-gray-900 bg-white rounded-lg border border-gray-300 transition hover:bg-gray-100 dark:bg-gray-800 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                clip-rule="evenodd" />
+            </svg>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7">
+        <div class="p-6 bg-gray-100 rounded-2xl border border-gray-200 dark:bg-gray-900 dark:border-gray-800 md:p-8">
+          <div class="flex items-center justify-between mb-7">
+            <p class="text-sm font-semibold text-gray-500 uppercase dark:text-gray-400">
+              System workflow
+            </p>
+            <span class="text-sm font-medium text-primary-600 dark:text-primary-300">01 → 04</span>
+          </div>
+
+          <div class="grid gap-4 md:grid-cols-2">
+            {{ range $index, $step := $featured.workflow }}
+              <article class="p-5 bg-white rounded-xl border border-gray-200 dark:bg-gray-950 dark:border-gray-800">
+                <p class="mb-3 text-sm font-semibold text-primary-600 dark:text-primary-300">
+                  0{{ add $index 1 }}
+                </p>
+                <h3 class="mb-2 text-lg font-bold text-gray-900 dark:text-white">
+                  {{ $step.title }}
+                </h3>
+                <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+                  {{ $step.text }}
+                </p>
+              </article>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="grid gap-5 mt-8 md:grid-cols-3">
+      {{ range $featured.highlights }}
+        <article class="p-5 bg-white rounded-xl border border-gray-200 dark:bg-gray-900 dark:border-gray-800">
+          <h3 class="mb-2 text-base font-bold text-gray-900 dark:text-white">
+            {{ .title }}
+          </h3>
+          <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+            {{ .text }}
+          </p>
+        </article>
+      {{ end }}
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       SELECTED PROJECTS
+       ========================================================= -->
+  <section class="bg-gray-100 dark:bg-gray-900">
+    <div class="px-4 py-16 mx-auto max-w-screen-xl lg:py-24">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="mb-2 text-base font-semibold text-primary-600 dark:text-primary-300">
+          {{ $projects.eyebrow }}
+        </p>
+
+        <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
+          {{ $projects.heading }}
+        </h2>
+
+        <p class="text-lg leading-relaxed text-gray-600 dark:text-gray-400">
+          {{ $projects.intro }}
+        </p>
+      </div>
+
+      <div class="grid gap-7 mt-12 md:grid-cols-2">
+        {{ range $projects.items }}
+          <article class="flex flex-col p-7 bg-white rounded-2xl border border-gray-200 shadow-sm transition dark:bg-gray-950 dark:border-gray-800">
+            <p class="mb-3 text-sm font-semibold text-primary-600 dark:text-primary-300">
+              {{ .category }}
+            </p>
+
+            <h3 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+              {{ .title }}
+            </h3>
+
+            <p class="mb-5 leading-relaxed text-gray-600 dark:text-gray-400">
+              {{ .description }}
+            </p>
+
+            {{ with .result }}
+              <div class="p-4 mb-6 bg-gray-50 rounded-xl border border-gray-200 dark:bg-gray-900 dark:border-gray-800">
+                <p class="text-sm font-semibold leading-relaxed text-gray-800 dark:text-gray-200">
+                  {{ . }}
+                </p>
+              </div>
+            {{ end }}
+
+            <div class="flex flex-wrap gap-2 mb-7">
+              {{ range .technologies }}
+                <span class="px-3 py-1 text-sm font-medium text-gray-600 bg-gray-100 rounded-full dark:bg-gray-900 dark:text-gray-400">
+                  {{ . }}
+                </span>
+              {{ end }}
+            </div>
+
+            <div class="mt-auto">
+              <a href="{{ .details }}" class="font-semibold text-primary-600 transition hover:underline dark:text-primary-300">
+                View project →
+              </a>
+            </div>
+          </article>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       TECHNICAL TOOLKIT
+       ========================================================= -->
+  <section id="skills" class="portfolio-anchor px-4 py-16 mx-auto max-w-screen-xl lg:py-24">
+    <div class="grid gap-10 lg:grid-cols-12 lg:gap-14">
+      <div class="lg:col-span-4">
+        <p class="mb-2 text-base font-semibold text-primary-600 dark:text-primary-300">
+          {{ $skills.eyebrow }}
+        </p>
+
+        <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
+          {{ $skills.heading }}
+        </h2>
+
+        <p class="mt-5 text-lg leading-relaxed text-gray-600 dark:text-gray-400">
+          {{ $skills.intro }}
+        </p>
+      </div>
+
+      <div class="grid gap-5 lg:col-span-8 md:grid-cols-2">
+        {{ range $skills.groups }}
+          <article class="p-6 bg-white rounded-2xl border border-gray-200 dark:bg-gray-900 dark:border-gray-800">
+            <h3 class="mb-5 text-xl font-bold text-gray-900 dark:text-white">
+              {{ .title }}
+            </h3>
+
+            <div class="flex flex-wrap gap-2">
+              {{ range .items }}
+                <span class="px-3 py-1.5 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg dark:bg-gray-950 dark:text-gray-300">
+                  {{ . }}
+                </span>
+              {{ end }}
+            </div>
+          </article>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       EXPERIENCE
+       ========================================================= -->
+  <section id="experience" class="portfolio-anchor bg-gray-100 dark:bg-gray-900">
+    <div class="px-4 py-16 mx-auto max-w-screen-xl lg:py-24">
+      <div class="grid gap-12 lg:grid-cols-12">
+
+        <div class="lg:col-span-4">
+          <p class="mb-2 text-base font-semibold text-primary-600 dark:text-primary-300">
+            {{ $experience.eyebrow }}
+          </p>
+
+          <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
+            {{ $experience.heading }}
+          </h2>
+
+          <p class="mt-5 text-lg leading-relaxed text-gray-600 dark:text-gray-400">
+            {{ $experience.intro }}
+          </p>
+        </div>
+
+        <div class="space-y-6 lg:col-span-8">
+          {{ range $experience.items }}
+            <article class="p-7 bg-white rounded-2xl border border-gray-200 dark:bg-gray-950 dark:border-gray-800">
+              <div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                    {{ .title }}
+                  </h3>
+                  <p class="mt-1 font-semibold text-gray-700 dark:text-gray-300">
+                    {{ .organization }}
+                  </p>
+                </div>
+
+                <div class="text-sm font-medium text-gray-500 sm:text-right dark:text-gray-400">
+                  <p>{{ .period }}</p>
+                  {{ with .location }}<p class="mt-1">{{ . }}</p>{{ end }}
+                </div>
+              </div>
+
+              <ul class="mt-6 space-y-3">
+                {{ range .bullets }}
+                  <li class="flex gap-3 text-gray-600 dark:text-gray-400">
+                    <span class="mt-2 w-1.5 h-1.5 flex-shrink-0 bg-primary-500 rounded-full" aria-hidden="true"></span>
+                    <span class="leading-relaxed">{{ . | markdownify }}</span>
+                  </li>
+                {{ end }}
+              </ul>
+            </article>
+          {{ end }}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       LEADERSHIP & COMMUNITY
+       ========================================================= -->
+  {{ with .Site.Params.leadership }}
+  <section id="leadership" class="px-4 py-16 mx-auto max-w-screen-xl lg:py-20">
+
+    <div class="grid gap-12 lg:grid-cols-12">
+
+      <!-- Section introduction -->
+      <div class="lg:col-span-4">
+        <p class="mb-2 text-base font-medium text-primary-500 dark:text-primary-300">
+          {{ .eyebrow }}
+        </p>
+
+        <h2
+          class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
+          {{ .heading }}
+        </h2>
+
+        {{ with .intro }}
+        <p class="mt-4 text-gray-600 dark:text-gray-400">
+          {{ . }}
+        </p>
+        {{ end }}
+      </div>
+
+
+      <!-- Leadership entries -->
+      <div class="space-y-8 lg:col-span-8">
+        {{ range .items }}
+        <article
+          class="p-6 bg-white rounded-2xl border border-gray-200 shadow-sm
+                 dark:bg-gray-900 dark:border-gray-800">
+
+          <div
+            class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                {{ .title }}
+              </h3>
+
+              <p class="mt-1 font-medium text-gray-600 dark:text-gray-300">
+                {{ .organization }}
+              </p>
+            </div>
+
+            {{ with .period }}
+            <p
+              class="flex-shrink-0 text-sm font-medium text-gray-500 dark:text-gray-400">
+              {{ . }}
+            </p>
+            {{ end }}
+          </div>
+
+          {{ with .bullets }}
+          <ul class="mt-5 space-y-3 text-gray-600 dark:text-gray-400">
+
+            {{ range . }}
+            <li class="flex gap-3">
+
+              <span
+                class="mt-2 w-1.5 h-1.5 flex-shrink-0 rounded-full bg-primary-500">
+              </span>
+              <span>{{ . }}</span>
+            </li>
+            {{ end }}
+          </ul>
+          {{ end }}
+        </article>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- =========================================================
+       RESEARCH & EDUCATION
+       ========================================================= -->
+  <section id="education" class="portfolio-anchor px-4 py-16 mx-auto max-w-screen-xl lg:py-24">
+    <div class="mx-auto max-w-3xl text-center">
+      <p class="mb-2 text-base font-semibold text-primary-600 dark:text-primary-300">
+        {{ $education.eyebrow }}
+      </p>
+
+      <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
+        {{ $education.heading }}
+      </h2>
+    </div>
+
+    <div class="grid gap-7 mx-auto mt-12 max-w-5xl md:grid-cols-2">
+      {{ range $education.items }}
+        <article class="p-7 bg-white rounded-2xl border border-gray-200 dark:bg-gray-900 dark:border-gray-800">
+          <p class="mb-3 text-sm font-semibold text-primary-600 dark:text-primary-300">
+            {{ .degree }}
+          </p>
+
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+            {{ .title }}
+          </h3>
+
+          <p class="mt-2 font-semibold text-gray-600 dark:text-gray-300">
+            {{ .institution }}
+          </p>
+
+          <p class="mt-5 leading-relaxed text-gray-600 dark:text-gray-400">
+            {{ .description }}
+          </p>
+        </article>
+      {{ end }}
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       ABOUT
+       ========================================================= -->
+  <section id="about" class="portfolio-anchor bg-gray-100 dark:bg-gray-900">
+    <div class="px-4 py-16 mx-auto max-w-screen-xl lg:py-24">
+      <div class="grid gap-10 items-start lg:grid-cols-12 lg:gap-16">
+
+        <div class="lg:col-span-4">
+          <p class="mb-2 text-base font-semibold text-primary-600 dark:text-primary-300">
+            {{ $about.eyebrow }}
+          </p>
+
+          <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
+            {{ $about.heading }}
+          </h2>
+        </div>
+
+        <div class="lg:col-span-8">
+          <p class="max-w-3xl text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+            {{ $about.text }}
+          </p>
+
+          <!-- Github -->
+
+          <div class="flex flex-wrap gap-4 mt-8">
+            {{ with .Site.Params.social_media.github }}
+              {{ if .enabled }}
+                <a
+                  href="{{ $.Site.Params.Social_media.Github.Url }}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 px-5 py-3 font-semibold text-gray-900 bg-white rounded-lg border border-gray-300 transition hover:bg-gray-100 dark:bg-gray-800 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                      clip-rule="evenodd" />
+                  </svg>
+
+                  <span>GitHub</span>
+                </a>
+              {{ end }}
+            {{ end }}
+
+            <!-- LinkedIn -->
+
+            {{ with .Site.Params.social_media.linkedin }}
+              {{ if .enabled }}
+                <a
+                  href="{{$.Site.Params.Social_media.Linkedin.Url}}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 px-5 py-3 font-semibold text-gray-900 bg-white rounded-lg border border-gray-300 transition hover:bg-gray-100 dark:bg-gray-800 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill-rule="evenodd"
+                            d="M20.3292112,2 C21.2519624,2 22,2.74752185 22,3.67078882 L22,20.3292112 C22,21.2519624 21.2524781,22 20.3292112,22 L3.67078882,22 C2.74803764,22 2,21.2524781 2,20.3292112 L2,3.67078882 C2,2.74803764 2.74752185,2 3.67078882,2 L20.3292112,2 Z M15.51875,9.5 C14.0993287,9.5 13.128125,10.127356 12.6956992,10.8562567 L12.625,10.9858333 L12.625,9.625 L9.91666667,9.625 L9.91666667,19.2083333 L12.8333333,19.2083333 L12.8333333,14.56625 C12.8333333,13.0104167 13.40625,12.0208333 14.7833333,12.0208333 C15.7330797,12.0208333 16.1315784,12.8606664 16.1644352,14.3580086 L16.1666667,14.56625 L16.1666667,19.2083333 L19.0833333,19.2083333 L19.0833333,13.9154167 C19.0833333,11.0575 18.3995833,9.5 15.51875,9.5 Z M7.83333333,9.5 L4.91666667,9.5 L4.91666667,19.0833333 L7.83333333,19.0833333 L7.83333333,9.5 Z M6.375,4.5 C5.33958333,4.5 4.5,5.33958333 4.5,6.375 C4.5,7.41041667 5.33958333,8.25 6.375,8.25 C7.41041667,8.25 8.25,7.41041667 8.25,6.375 C8.25,5.33958333 7.41041667,4.5 6.375,4.5 Z"
+                            clip-rule="evenodd" />
+                  </svg>
+
+                  <span>LinkedIn</span>
+                </a>
+              {{ end }}
+            {{ end }}
+
+            <!-- Medium -->
+
+            {{ with .Site.Params.social_media.medium }}
+              {{ if .enabled }}
+                <a
+                  href="{{ .url }}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center px-5 py-3 text-base font-semibold text-gray-900 bg-white rounded-lg border border-gray-300 transition hover:bg-gray-100 dark:bg-gray-800 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700">
+
+                  <span>Medium</span>
+
+                </a>
+              {{ end }}
+            {{ end }}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       CONTACT
+       ========================================================= -->
+  <section id="contact" class="portfolio-anchor bg-gray-950">
+    <div class="px-4 py-16 mx-auto max-w-screen-xl lg:py-24">
+      <div class="mx-auto max-w-4xl text-center">
+        <p class="mb-3 text-base font-semibold text-primary-300">
+          {{ $contact.eyebrow }}
+        </p>
+
+        <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+          {{ $contact.heading }}
+        </h2>
+
+        <p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-gray-300">
+          {{ $contact.text }}
+        </p>
+
+        <div class="flex flex-wrap gap-4 justify-center mt-8">
+          <a
+            href="mailto:{{ .Site.Params.email }}"
+            class="inline-flex items-center gap-2 px-5 py-3 text-base font-semibold text-gray-900 bg-white rounded-lg border border-gray-300 transition hover:bg-gray-100 dark:bg-gray-800 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700">
+
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true">
+
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21.75 6.75v10.5A2.25 2.25 0 0119.5 19.5h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0l-7.5-4.615A2.25 2.25 0 012.25 6.993V6.75" />
+            </svg>
+
+            <span>Email Me</span>
+
+          </a>
+          <!-- LinkedIn -->
+
+          {{ with .Site.Params.social_media.linkedin }}
+            {{ if .enabled }}
+            <a
+              href="{{ $.Site.Params.Social_media.Linkedin.Url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-5 py-3 font-semibold text-gray-900 bg-white rounded-lg border border-gray-300 transition hover:bg-gray-100 dark:bg-gray-800 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd"
+                        d="M20.3292112,2 C21.2519624,2 22,2.74752185 22,3.67078882 L22,20.3292112 C22,21.2519624 21.2524781,22 20.3292112,22 L3.67078882,22 C2.74803764,22 2,21.2524781 2,20.3292112 L2,3.67078882 C2,2.74803764 2.74752185,2 3.67078882,2 L20.3292112,2 Z M15.51875,9.5 C14.0993287,9.5 13.128125,10.127356 12.6956992,10.8562567 L12.625,10.9858333 L12.625,9.625 L9.91666667,9.625 L9.91666667,19.2083333 L12.8333333,19.2083333 L12.8333333,14.56625 C12.8333333,13.0104167 13.40625,12.0208333 14.7833333,12.0208333 C15.7330797,12.0208333 16.1315784,12.8606664 16.1644352,14.3580086 L16.1666667,14.56625 L16.1666667,19.2083333 L19.0833333,19.2083333 L19.0833333,13.9154167 C19.0833333,11.0575 18.3995833,9.5 15.51875,9.5 Z M7.83333333,9.5 L4.91666667,9.5 L4.91666667,19.0833333 L7.83333333,19.0833333 L7.83333333,9.5 Z M6.375,4.5 C5.33958333,4.5 4.5,5.33958333 4.5,6.375 C4.5,7.41041667 5.33958333,8.25 6.375,8.25 C7.41041667,8.25 8.25,7.41041667 8.25,6.375 C8.25,5.33958333 7.41041667,4.5 6.375,4.5 Z"
+                        clip-rule="evenodd" />
+              </svg>
+
+              <span>LinkedIn</span>
+            </a>
+            {{ end }}
+          {{ end }}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+{{ end }}
