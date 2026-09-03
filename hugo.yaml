@@ -1,0 +1,563 @@
+baseURL: "https://www.umutgokdemir.com/"
+title: "Umut Gökdemir"
+
+languageCode: "en-us"
+defaultContentLanguage: "en"
+
+theme: "tailbliss"
+
+ignoreFiles:
+  - 'themes/tailbliss/content/.*'
+  
+enableEmoji: true
+enableGitInfo: false
+enableRobotsTXT: true
+enableInlineShortcodes: true
+
+canonifyURLs: false
+
+pagination:
+  pagerSize: 9
+
+darkmode_js:
+  - assets/js/darkmode.js
+
+# ============================================================
+# MARKDOWN
+# ============================================================
+
+markup:
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      linkifyProtocol: "https"
+      strikethrough: true
+      table: true
+      taskList: true
+
+      typographer:
+        apostrophe: "&rsquo;"
+        disable: false
+        ellipsis: "&hellip;"
+        emDash: "&mdash;"
+        enDash: "&ndash;"
+        leftAngleQuote: "&laquo;"
+        leftDoubleQuote: "&ldquo;"
+        leftSingleQuote: "&lsquo;"
+        rightAngleQuote: "&raquo;"
+        rightDoubleQuote: "&rdquo;"
+        rightSingleQuote: "&rsquo;"
+
+    parser:
+      attribute:
+        block: false
+        title: true
+      autoHeadingID: true
+      autoHeadingIDType: "github"
+      wrapStandAloneImageWithinParagraph: true
+
+    renderer:
+      hardWraps: false
+      unsafe: true
+      xhtml: false
+
+# ============================================================
+# SITE / PORTFOLIO DATA
+# ============================================================
+
+params:
+  author: "Umut Gökdemir"
+  footer:
+    show_social_icons: false
+  seo_title: "Machine Learning Engineer | Umut Gökdemir"
+
+  description: >-
+    Machine Learning Engineer focused on applied ML, NLP, agentic AI,
+    semantic retrieval and model evaluation, with a background in
+    computational science and physics.
+
+  og_image: "/umut.jpeg"
+  og_image_alt: "Umut Gökdemir — Machine Learning Engineer"
+
+  moto: "Machine Learning Engineer"
+  cv: "/cv.pdf"
+  email: "contact@umutgokdemir.com"
+
+  # ----------------------------------------------------------
+  # HERO
+  # ----------------------------------------------------------
+
+  hero:
+    eyebrow: "Machine Learning Engineer"
+    subtitle: "NLP · Agentic AI · Applied Machine Learning"
+
+    description: >-
+      I build and evaluate machine learning systems, from transformer-based
+      NLP models to semantic retrieval pipelines and agentic AI workflows.
+
+    image: "images/umut.jpeg"
+    image_alt: "Portrait of Umut Gökdemir"
+
+    primary_button:
+      text: "Explore my work"
+      url: "/#projects"
+
+    secondary_button:
+      text: "Download CV"
+      url: "/cv.pdf"
+
+  # ----------------------------------------------------------
+  # FEATURED PROJECT
+  # ----------------------------------------------------------
+
+  featured_project:
+    eyebrow: "Featured work"
+    title: "CareerMatch Agent"
+    category: "Agentic AI · ML Systems"
+
+    description: >-
+      An explainable AI-assisted job-matching system that turns a candidate
+      profile and job preferences into ranked recommendations using
+      deterministic constraints, multilingual semantic retrieval and
+      evidence-grounded LLM evaluation.
+
+    technologies:
+      - "Python"
+      - "LangGraph"
+      - "FastAPI"
+      - "SentenceTransformers"
+      - "OpenAI"
+      - "Gemini"
+      - "Ollama"
+
+    workflow:
+      - title: "Candidate understanding"
+        text: "Extract structured candidate information from CV data and preferences."
+
+      - title: "Hybrid retrieval"
+        text: "Combine deterministic constraints with multilingual semantic ranking."
+
+      - title: "LLM evaluation"
+        text: "Evaluate matches with evidence-grounded reasoning instead of opaque scoring."
+
+      - title: "Explainable output"
+        text: "Return ranked opportunities with clear supporting evidence and rationale."
+
+    highlights:
+      - title: "Multi-provider architecture"
+        text: "Interchangeable OpenAI, Gemini and Ollama model providers."
+
+      - title: "Evaluation-driven"
+        text: "Benchmark tooling for ranking quality, retrieval metrics and latency."
+
+      - title: "Engineering-first"
+        text: "API-based design with automated tests and reproducible workflows."
+
+    github: "https://github.com/LittleBigPluton/career-match-agent"
+    details: "/projects/career-match-agent/"
+
+  # ----------------------------------------------------------
+  # SELECTED PROJECTS
+  # ----------------------------------------------------------
+
+  projects:
+    eyebrow: "Selected projects"
+    heading: "Applied ML across language and scientific data"
+    intro: >-
+      A small set of projects chosen for technical relevance, measurable
+      results and clear evidence of hands-on machine learning work.
+
+    items:
+      - title: "Multilingual Named Entity Recognition"
+        category: "Natural Language Processing"
+
+        description: >-
+          Fine-tuned transformer-based models for Turkish named entity
+          recognition on noisy social-media text, supported by improved
+          annotation and preprocessing workflows.
+
+        result: "Improved span-level micro-F1 from 0.44 to 0.75."
+
+        technologies:
+          - "PyTorch"
+          - "Hugging Face"
+          - "Transformers"
+          - "Model Evaluation"
+
+        details: "/projects/multilingual-ner/"
+
+      - title: "DESI-MSI Tissue Segmentation"
+        category: "Scientific Machine Learning"
+
+        description: >-
+          Built a scientific-data workflow for tissue-region identification
+          in mass-spectrometry imaging data, combining data cleaning,
+          exploratory analysis, clustering and segmentation evaluation.
+
+        result: >-
+          Reduced analysis footprint by ~40% while preserving 95% of explained
+          variance before tissue-region segmentation.
+
+        technologies:
+          - "Python"
+          - "scikit-learn"
+          - "K-means"
+          - "Scientific Computing"
+
+        details: "/projects/desi-msi-segmentation/"
+
+  # ----------------------------------------------------------
+  # TECHNICAL TOOLKIT
+  # ----------------------------------------------------------
+
+  skills:
+    eyebrow: "Technical toolkit"
+    heading: "Tools I use to build, evaluate and ship ML systems"
+    intro: >-
+      My strongest work sits at the intersection of machine learning,
+      NLP, AI systems and production-minded Python engineering.
+
+    groups:
+      - title: "Machine Learning"
+        items:
+          - "PyTorch"
+          - "scikit-learn"
+          - "Model Evaluation"
+          - "Deep Learning"
+          - "Clustering"
+
+      - title: "NLP & Retrieval"
+        items:
+          - "Hugging Face"
+          - "Transformers"
+          - "SentenceTransformers"
+          - "Semantic Search"
+          - "NER"
+
+      - title: "AI Systems"
+        items:
+          - "LangGraph"
+          - "Agentic Workflows"
+          - "LLM Evaluation"
+          - "OpenAI"
+          - "Gemini"
+          - "Ollama"
+
+      - title: "Engineering"
+        items:
+          - "Python"
+          - "FastAPI"
+          - "Docker"
+          - "Git"
+          - "Linux"
+          - "AWS"
+
+  # ----------------------------------------------------------
+  # EXPERIENCE
+  # ----------------------------------------------------------
+
+  experience:
+
+    eyebrow: "Professional experience"
+
+    heading: "Machine Learning Experience"
+
+    intro: >-
+      Applied machine learning experience across NLP and high-dimensional
+      scientific data, spanning data preparation, model development,
+      evaluation and reproducible experimentation.
+
+    items:
+
+      - title: "Machine Learning Engineer Intern"
+        organization: "EnlightyAI"
+        period: "May 2025 – October 2025"
+        location: "Remote"
+        bullets:
+          - >-
+            Improved span-level micro-F1 from **0.44 to 0.75** by fine-tuning
+            and evaluating transformer-based NER models for noisy Turkish
+            social-media text.
+
+          - >-
+            Improved training-data quality across **6,000 annotated tweets** by
+            coordinating annotation and validation workflows, refining
+            preprocessing and systematically investigating annotation and
+            prediction errors.
+
+          - >-
+            Strengthened model selection and experimentation by benchmarking
+            **multiple BERT and XLM-R variants** through reproducible training,
+            validation and error analysis.
+
+          - >-
+            Led an **8-person internship team** by planning workloads, assigning
+            tasks, running weekly progress meetings and consolidating progress
+            reports, helping keep annotation, preprocessing, training and
+            evaluation work aligned across the project.
+
+
+      - title: "Machine Learning Engineer Intern"
+        organization: "Functional Genomics Laboratory Regensburg"
+        period: "March 2024 – June 2024"
+        location: "Regensburg, Germany"
+        bullets:
+          - >-
+            Reduced the analysis data footprint by approximately **40%** by
+            building a Python preprocessing pipeline for cleaning,
+            restructuring and optimizing high-dimensional DESI
+            mass-spectrometry imaging data.
+
+          - >-
+            Preserved **95% of explained variance** while reducing feature
+            dimensionality by applying PCA before unsupervised tissue-region
+            segmentation with four-cluster K-means.
+
+          - >-
+            Improved the interpretability of **unsupervised tissue segmentation**
+            by mapping cluster assignments back to spatial coordinates and
+            validating molecular-density patterns across follow-up scan series.
+
+          - >-
+            Worked within an **interdisciplinary research team** by communicating
+            analysis progress through weekly reports, incorporating domain
+            feedback into the workflow, presenting the methodology
+            and results to the team and stakeholders.
+
+  # ----------------------------------------------------------
+  # LEADERSHIP & COMMUNITY
+  # ----------------------------------------------------------
+
+  leadership:
+
+    eyebrow: "Leadership & community"
+    heading: "Leadership Beyond Engineering"
+    intro: >-
+      Long-term experience in team leadership, mentoring,
+      operations and community organization.
+
+    items:
+      - title: "Scout Leader & Association President"
+        organization: "Camadan Scout, Youth and Sport Association"
+        period: "April 2014 – April 2021"
+        bullets:
+          - >-
+            Led the training and development of approximately 15–20 scouts
+            each year by designing recurring educational programs, preparing
+            training materials and delivering practical and theoretical sessions.
+
+          - >-
+            Managed camps and community activities end to end, coordinating
+            logistics, schedules, equipment, accommodation, safety and
+            communication with participants and families.
+
+          - >-
+            Directed association operations as President through volunteer
+            coordination, delegation, budgeting, external partnerships and
+            leadership meetings, while mentoring senior scouts into future
+            leader and instructor roles.
+
+  # ----------------------------------------------------------
+  # EDUCATION
+  # ----------------------------------------------------------
+
+  education:
+    eyebrow: "Research & education"
+    heading: "Quantitative foundations for machine learning"
+
+    items:
+      - degree: "M.Sc."
+        title: "Computational Science"
+        institution: "University of Regensburg"
+        description: >-
+          Advanced training in machine learning, numerical methods,
+          scientific computing and computational modelling, with
+          hands-on work on data-driven and simulation-based problems.
+
+      - degree: "B.Sc."
+        title: "Physics"
+        institution: "Middle East Technical University"
+        description: >-
+          Built a rigorous foundation in mathematical modelling,
+          numerical problem solving and computational physics,
+          including research experience in quantum many-body systems.
+
+  # ----------------------------------------------------------
+  # ABOUT
+  # ----------------------------------------------------------
+
+  about:
+    eyebrow: "About"
+    heading: "Physics-trained. Engineering-focused."
+
+    text: >-
+      I am a Machine Learning Engineer with a background in computational
+      science and physics. I build and evaluate ML systems across NLP,
+      semantic retrieval, agentic AI and scientific data, with an emphasis
+      on reproducible experimentation, measurable performance and systematic
+      error analysis. My quantitative background shapes how I approach
+      modelling and uncertainty; my engineering focus is turning those ideas
+      into reliable, testable systems.
+
+  # ----------------------------------------------------------
+  # CONTACT
+  # ----------------------------------------------------------
+
+  contact:
+   eyebrow: "Contact"
+   heading: "Open to machine learning opportunities"
+   text: >-
+     I am interested in Machine Learning Engineering, Applied ML
+     and AI Engineering opportunities where I can work on meaningful
+     models, data and production-oriented AI systems. For opportunities,
+     collaborations or technical conversations, feel free to reach out.
+
+  # ----------------------------------------------------------
+  # SOCIAL MEDIA
+  # ----------------------------------------------------------
+
+  social_media:
+    linkedin:
+      enabled: true
+      url: "https://www.linkedin.com/in/umutgokdemir/"
+
+    github:
+      enabled: true
+      url: "https://github.com/LittleBigPluton"
+
+    facebook:
+      enabled: false
+      url: ""
+
+    instagram:
+      enabled: false
+      url: ""
+
+    twitter:
+      enabled: false
+      url: ""
+
+    bluesky:
+      enabled: false
+      url: ""
+
+    medium:
+      enabled: true
+      url: "https://medium.com/@ckmzyol"
+# ============================================================
+# NAVIGATION
+# ============================================================
+
+menu:
+  main:
+    - identifier: "projects"
+      name: "Projects"
+      url: "/#projects"
+      weight: 10
+
+    - identifier: "skills"
+      name: "Skills"
+      url: "/#skills"
+      weight: 20
+
+    - identifier: "experience"
+      name: "Experience"
+      url: "/#experience"
+      weight: 30
+
+    - identifier: "education"
+      name: "Education"
+      url: "/#education"
+      weight: 40
+
+    - identifier: "about"
+      name: "About"
+      url: "/#about"
+      weight: 50
+
+    - identifier: "contact"
+      name: "Contact"
+      url: "/#contact"
+      weight: 60
+
+    - identifier: "cv"
+      name: "CV"
+      url: "/cv.pdf"
+      weight: 70
+
+
+  footer:
+    - identifier: "projects"
+      name: "Projects"
+      url: "/#projects"
+      weight: 10
+
+    - identifier: "skills"
+      name: "Skills"
+      url: "/#skills"
+      weight: 20
+
+    - identifier: "experience"
+      name: "Experience"
+      url: "/#experience"
+      weight: 30
+
+    - identifier: "education"
+      name: "Education"
+      url: "/#education"
+      weight: 40
+
+    - identifier: "cv"
+      name: "CV"
+      url: "/cv.pdf"
+      weight: 50
+
+# ============================================================
+# TAXONOMIES
+# ============================================================
+
+taxonomies:
+  category: "Categories"
+  tag: "Tags"
+
+# ============================================================
+# PRIVACY
+# ============================================================
+
+privacy:
+  disqus:
+    disable: false
+
+  googleAnalytics:
+    anonymizeIP: true
+    disable: false
+    respectDoNotTrack: false
+    useSessionStorage: false
+
+  instagram:
+    disable: false
+    simple: false
+
+  twitter:
+    disable: false
+    enableDNT: false
+    simple: false
+
+  vimeo:
+    disable: false
+    enableDNT: false
+
+  youtube:
+    disable: false
+    privacyEnhanced: true
+
+# ============================================================
+# HUGO REQUIREMENTS
+# ============================================================
+
+module:
+  hugoVersion:
+    extended: true
+    min: "0.158.0"
