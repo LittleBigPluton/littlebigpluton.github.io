@@ -169,7 +169,7 @@ params:
       results and clear evidence of hands-on machine learning work.
 
     items:
-      - title: "Multilingual Named Entity Recognition"
+      - title: "Multilingual Social-Media NER"
         category: "Natural Language Processing"
 
         description: >-
