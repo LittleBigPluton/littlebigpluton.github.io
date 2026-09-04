@@ -1,11 +1,11 @@
 ---
-title: "DESI-MSI Tissue Segmentation"
-description: "Unsupervised tissue-region identification in high-dimensional mass-spectrometry imaging data using preprocessing, PCA, K-means clustering and spatial validation."
-slug: "desi-msi-segmentation"
+title: "Tissue Segmentation"
+description: "Unsupervised tissue-region identification in high-dimensional mass-spectrometry imaging (DESI-MSI) data using preprocessing, PCA, K-means clustering and spatial validation."
+slug: "Tissue-segmentation"
 draft: false
 ---
 
-[← Back to selected projects](/#projects)
+[← Back to projects](/#projects)
 
 **Context:** Machine Learning Engineer Intern · Functional Genomics Laboratory Regensburg · 2024  
 **Focus:** Unsupervised learning · High-dimensional scientific data · Spatial clustering
@@ -82,7 +82,7 @@ For the internship analysis, I used a **95% explained-variance threshold** to re
 
 The public repository also includes cumulative explained-variance analysis. On one included sample dataset, approximately **15 principal components were sufficient to explain 99% of the variance**.
 
-![PCA explained variance](https://raw.githubusercontent.com/LittleBigPluton/Mass-Spectrometry-Imaging-Clustering/main/figures/pca_plot_Sample_PL.png)
+![PCA explained variance](/images/projects/tissue-segmentation/pca_plot_Sample_PL.png)
 
 ## Tissue-region detection with K-means
 
@@ -92,11 +92,11 @@ Cluster assignments were then mapped back to the original X/Y coordinates to gen
 
 The public implementation also includes an elbow-method workflow for inspecting within-cluster sum of squares across candidate values of *k*.
 
-![Elbow method](https://raw.githubusercontent.com/LittleBigPluton/Mass-Spectrometry-Imaging-Clustering/main/figures/elbow_plot_Sample_PL.png)
+![Elbow method](/images/projects/tissue-segmentation/elbow_plot_Sample_PL.png)
 
 A representative spatial cluster map from the public implementation:
 
-![DESI-MSI cluster map](https://raw.githubusercontent.com/LittleBigPluton/Mass-Spectrometry-Imaging-Clustering/main/figures/processed_Sample_PL_cluster_labels_heatmap.png)
+![DESI-MSI cluster map](/images/projects/tissue-segmentation/processed_Sample_PL_cluster_labels_heatmap.png)
 
 ## Validation across follow-up scans
 
@@ -141,4 +141,4 @@ It combines data engineering, dimensionality reduction, unsupervised learning, q
 
 [View source on GitHub →](https://github.com/LittleBigPluton/Mass-Spectrometry-Imaging-Clustering)
 
-[← Back to selected projects](/#projects)
+[← Back to projects](/#projects)
