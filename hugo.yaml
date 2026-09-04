@@ -8,7 +8,7 @@ theme: "tailbliss"
 
 ignoreFiles:
   - 'themes/tailbliss/content/.*'
-  
+
 enableEmoji: true
 enableGitInfo: false
 enableRobotsTXT: true
@@ -161,7 +161,6 @@ params:
   # ----------------------------------------------------------
   # SELECTED PROJECTS
   # ----------------------------------------------------------
-
   projects:
     eyebrow: "Selected projects"
     heading: "Applied ML across language and scientific data"
@@ -206,7 +205,7 @@ params:
           - "K-means"
           - "Scientific Computing"
 
-        details: "/projects/desi-msi-segmentation/"
+        details: "/projects/tissue-segmentation/"
 
   # ----------------------------------------------------------
   # TECHNICAL TOOLKIT
@@ -214,18 +213,23 @@ params:
 
   skills:
     eyebrow: "Technical toolkit"
-    heading: "Tools I use to build, evaluate and ship ML systems"
+
+    heading: "Tools I use to build, evaluate and engineer ML systems"
+
     intro: >-
       My strongest work sits at the intersection of machine learning,
       NLP, AI systems and production-minded Python engineering.
 
     groups:
+
       - title: "Machine Learning"
         items:
           - "PyTorch"
           - "scikit-learn"
-          - "Model Evaluation"
+          - "pandas"
+          - "NumPy"
           - "Deep Learning"
+          - "Model Evaluation"
           - "Clustering"
 
       - title: "NLP & Retrieval"
@@ -234,23 +238,43 @@ params:
           - "Transformers"
           - "SentenceTransformers"
           - "Semantic Search"
-          - "NER"
+          - "Embeddings"
+          - "Named Entity Recognition"
 
-      - title: "AI Systems"
+      - title: "AI & LLM Systems"
         items:
           - "LangGraph"
           - "Agentic Workflows"
           - "LLM Evaluation"
+          - "Evidence-Grounded AI"
           - "OpenAI"
           - "Gemini"
           - "Ollama"
 
-      - title: "Engineering"
+      - title: "Backend & Applications"
         items:
           - "Python"
           - "FastAPI"
+          - "Pydantic"
+          - "REST APIs"
+          - "HTTPX"
+          - "Streamlit"
+
+      - title: "Testing & Code Quality"
+        items:
+          - "pytest"
+          - "Unit Testing"
+          - "Integration Testing"
+          - "mypy"
+          - "Ruff"
+          - "Type Checking"
+
+      - title: "Infrastructure & Development"
+        items:
           - "Docker"
           - "Git"
+          - "GitHub Actions"
+          - "CI/CD"
           - "Linux"
           - "AWS"
 

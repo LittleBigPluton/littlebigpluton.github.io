@@ -1,11 +1,11 @@
 ---
-title: "Turkish Social-Media Named Entity Recognition"
+title: "Multilingual Social-Media Named Entity Recognition"
 description: "Transformer-based NER for noisy Turkish social-media text, with annotation redesign, model benchmarking, reproducible training and measurable evaluation gains."
 slug: "multilingual-ner"
 draft: false
 ---
 
-[← Back to selected projects](/#projects)
+[← Back to projects](/#projects)
 
 **Context:** Machine Learning Engineer Intern · EnlightyAI · May–October 2025  
 **Focus:** Named Entity Recognition · Transformer fine-tuning · Model evaluation
@@ -116,4 +116,4 @@ This project is representative of how I approach applied machine learning: **mea
 
 **Core technologies:** Python · PyTorch · Hugging Face Transformers · BERT · XLM-R · AWS EC2 · Git · NLP · Named Entity Recognition · Model Evaluation
 
-[← Back to selected projects](/#projects)
+[← Back to projects](/#projects)
