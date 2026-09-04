@@ -395,6 +395,7 @@ params:
       - degree: "M.Sc."
         title: "Computational Science"
         institution: "University of Regensburg"
+        period: "2025"
         description: >-
           Advanced training in machine learning, numerical methods,
           scientific computing and computational modelling, with
@@ -403,6 +404,7 @@ params:
       - degree: "B.Sc."
         title: "Physics"
         institution: "Middle East Technical University"
+        period: "2021"
         description: >-
           Built a rigorous foundation in mathematical modelling,
           numerical problem solving and computational physics,
