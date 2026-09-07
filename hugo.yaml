@@ -82,7 +82,7 @@ params:
   og_image_alt: "Umut Gökdemir — Machine Learning Engineer"
 
   moto: "Machine Learning Engineer"
-  cv: "/cv.pdf"
+  cv: "/umut_gokdemir_cv_english.pdf"
   email: "contact@umutgokdemir.com"
 
   # ----------------------------------------------------------
@@ -106,7 +106,7 @@ params:
 
     secondary_button:
       text: "Download CV"
-      url: "/cv.pdf"
+      url: "/umut_gokdemir_cv_english.pdf"
 
   # ----------------------------------------------------------
   # FEATURED PROJECT
@@ -395,7 +395,7 @@ params:
       - degree: "M.Sc."
         title: "Computational Science"
         institution: "University of Regensburg"
-        period: "2025"
+        period: "2026"
         description: >-
           Advanced training in machine learning, numerical methods,
           scientific computing and computational modelling, with
@@ -510,7 +510,7 @@ menu:
 
     - identifier: "cv"
       name: "CV"
-      url: "/cv.pdf"
+      url: "/umut_gokdemir_cv_english.pdf"
       weight: 70
 
 
@@ -537,7 +537,7 @@ menu:
 
     - identifier: "cv"
       name: "CV"
-      url: "/cv.pdf"
+      url: "/umut_gokdemir_cv_english.pdf"
       weight: 50
 
 # ============================================================
