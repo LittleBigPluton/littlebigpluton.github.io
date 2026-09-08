@@ -187,25 +187,25 @@ params:
 
         details: "/projects/multilingual-ner/"
 
-      - title: "DESI-MSI Tissue Segmentation"
-        category: "Scientific Machine Learning"
+      - title: "Predictive Maintenance ML"
+        category: "Applied Machine Learning"
 
         description: >-
-          Built a scientific-data workflow for tissue-region identification
-          in mass-spectrometry imaging data, combining data cleaning,
-          exploratory analysis, clustering and segmentation evaluation.
+          Built an end-to-end predictive-maintenance pipeline for imbalanced
+          equipment-failure classification, combining domain-informed feature
+          engineering, cross-validated model selection, threshold optimization
+          and systematic error analysis.
 
         result: >-
-          Reduced analysis footprint by ~40% while preserving 95% of explained
-          variance before tissue-region segmentation.
+          Achieved 0.876 held-out test Average Precision with 0.947 precision and 0.794 recall.
 
         technologies:
           - "Python"
           - "scikit-learn"
-          - "K-means"
-          - "Scientific Computing"
+          - "XGBoost"
+          - "Model Evaluation"
 
-        details: "/projects/tissue-segmentation/"
+        details: "/projects/predictive-maintenance/"
 
   # ----------------------------------------------------------
   # TECHNICAL TOOLKIT
