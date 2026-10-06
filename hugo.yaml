@@ -74,9 +74,9 @@ params:
   seo_title: "Machine Learning Engineer | Umut Gökdemir"
 
   description: >-
-    Machine Learning Engineer focused on applied ML, NLP, agentic AI,
-    semantic retrieval and model evaluation, with a background in
-    computational science and physics.
+    Machine Learning Engineer building reliable end-to-end systems across
+    applied ML, NLP, retrieval and predictive modelling, with measurable,
+    reproducible results.
 
   og_image: "/umut.jpeg"
   og_image_alt: "Umut Gökdemir — Machine Learning Engineer"
@@ -91,11 +91,12 @@ params:
 
   hero:
     eyebrow: "Machine Learning Engineer"
-    subtitle: "NLP · Agentic AI · Applied Machine Learning"
+    subtitle: "Applied ML · NLP · ML Systems"
 
     description: >-
-      I build and evaluate machine learning systems, from transformer-based
-      NLP models to semantic retrieval pipelines and agentic AI workflows.
+      I build and evaluate end-to-end machine learning systems across NLP,
+      retrieval and predictive modelling, with a focus on measurable performance
+      and reproducible engineering.
 
     image: "images/umut.jpeg"
     image_alt: "Portrait of Umut Gökdemir"
@@ -115,12 +116,11 @@ params:
   featured_project:
     eyebrow: "Featured work"
     title: "CareerMatch Agent"
-    category: "Agentic AI · ML Systems"
+    category: "ML Systems · Retrieval · Evaluation"
 
     description: >-
-      An explainable AI-assisted job-matching system that turns a candidate
-      profile and job preferences into ranked recommendations using
-      deterministic constraints, multilingual semantic retrieval and
+      An end-to-end ML-assisted job-matching system combining deterministic
+      constraints, multilingual semantic retrieval, hybrid ranking and
       evidence-grounded LLM evaluation.
 
     technologies:
@@ -163,30 +163,12 @@ params:
   # ----------------------------------------------------------
   projects:
     eyebrow: "Selected projects"
-    heading: "Applied ML across language and scientific data"
+    heading: "Machine learning and performance engineering"
     intro: >-
-      A small set of projects chosen for technical relevance, measurable
-      results and clear evidence of hands-on machine learning work.
+      A focused set of projects demonstrating end-to-end ML systems,
+      rigorous model evaluation and performance-oriented engineering.
 
     items:
-      - title: "Multilingual Social-Media NER"
-        category: "Natural Language Processing"
-
-        description: >-
-          Fine-tuned transformer-based models for Turkish named entity
-          recognition on noisy social-media text, supported by improved
-          annotation and preprocessing workflows.
-
-        result: "Improved span-level micro-F1 from 0.44 to 0.75."
-
-        technologies:
-          - "PyTorch"
-          - "Hugging Face"
-          - "Transformers"
-          - "Model Evaluation"
-
-        details: "/projects/multilingual-ner/"
-
       - title: "Predictive Maintenance ML"
         category: "Applied Machine Learning"
 
@@ -197,7 +179,8 @@ params:
           and systematic error analysis.
 
         result: >-
-          Achieved 0.876 held-out test Average Precision with 0.947 precision and 0.794 recall.
+          Achieved 0.876 held-out test Average Precision with 0.947 precision
+          and 0.794 recall.
 
         technologies:
           - "Python"
@@ -206,6 +189,27 @@ params:
           - "Model Evaluation"
 
         details: "/projects/predictive-maintenance/"
+
+      - title: "GPU-Accelerated Satellite Constellation Simulation"
+        category: "Performance Engineering · Scientific Computing"
+
+        description: >-
+          Built and benchmarked a C++17/CUDA satellite simulation against
+          serial CPU execution, with explicit CPU/GPU correctness validation
+          and reproducible performance measurement.
+
+        result: >-
+          Achieved 48.55× single-step kernel speedup and 46.84× end-to-end
+          acceleration for a 1M-satellite, 100-step GPU-resident workload.
+
+        technologies:
+          - "CUDA"
+          - "C++17"
+          - "Parallel Computing"
+          - "Benchmarking"
+
+        details: "/projects/gpu-accelerated-satellite-constellation-simulation/"
+
 
   # ----------------------------------------------------------
   # TECHNICAL TOOLKIT
@@ -218,7 +222,7 @@ params:
 
     intro: >-
       My strongest work sits at the intersection of machine learning,
-      NLP, AI systems and production-minded Python engineering.
+      NLP, retrieval and production-minded ML engineering.
 
     groups:
 
@@ -241,7 +245,7 @@ params:
           - "Embeddings"
           - "Named Entity Recognition"
 
-      - title: "AI & LLM Systems"
+      - title: "LLM Systems"
         items:
           - "LangGraph"
           - "Agentic Workflows"
@@ -251,7 +255,7 @@ params:
           - "Gemini"
           - "Ollama"
 
-      - title: "Backend & Applications"
+      - title: "ML Engineering"
         items:
           - "Python"
           - "FastAPI"
@@ -419,13 +423,9 @@ params:
     heading: "Physics-trained. Engineering-focused."
 
     text: >-
-      I am a Machine Learning Engineer with a background in computational
-      science and physics. I build and evaluate ML systems across NLP,
-      semantic retrieval, agentic AI and scientific data, with an emphasis
-      on reproducible experimentation, measurable performance and systematic
-      error analysis. My quantitative background shapes how I approach
-      modelling and uncertainty; my engineering focus is turning those ideas
-      into reliable, testable systems.
+      Machine Learning Engineer with a computational science and physics
+      background, building reliable ML systems across NLP, retrieval and
+      predictive modelling with measurable, reproducible results.
 
   # ----------------------------------------------------------
   # CONTACT
