@@ -1,4 +1,4 @@
 ---
 title: "Umut Gökdemir"
-description: "AI and Machine Learning Engineer and Computational Scientist."
+description: "Machine Learning Engineer building reliable end-to-end systems across applied ML, NLP, retrieval and predictive modelling, with measurable, reproducible results."
 ---
