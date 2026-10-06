@@ -1,15 +1,15 @@
 ---
 title: "CareerMatch Agent"
-description: "Explainable agentic AI job-search system combining deterministic constraints, multilingual semantic ranking and evidence-grounded LLM evaluation in a reusable FastAPI/LangGraph workflow."
+description: "Explainable ML job-matching system combining deterministic constraints, multilingual semantic ranking, hybrid retrieval and evidence-grounded LLM evaluation."
 ---
 
 # CareerMatch Agent
 
 [← Back to projects](/#projects)
 
-**Context:** Independent AI / Machine Learning Engineering Project · 2026–Present  
+**Context:** Independent Machine Learning Engineering Project · 2026–Present  
 **Status:** Active technical alpha  
-**Focus:** Agentic AI · Semantic retrieval · Explainable ranking · LLM evaluation · ML systems engineering
+**Focus:** ML systems · Semantic retrieval · Hybrid ranking · LLM evaluation · Bounded agentic workflows
 
 CareerMatch Agent is an end-to-end AI-assisted job-search and recommendation system that turns a **CV PDF and natural-language preferences** into ranked job opportunities with structured, evidence-grounded suitability reports.
 
@@ -132,7 +132,7 @@ Candidate and job text are represented through bounded evidence chunks so that r
 
 I evaluated a larger multilingual MPNet model during calibration, but rejected it because it **reduced ranking quality while increasing runtime**.
 
-On the frozen calibration benchmark:
+During an earlier embedding-model calibration experiment:
 
 | Model / ranking | nDCG@5 | nDCG@10 | Precision@10 |
 |---|---:|---:|---:|
@@ -187,76 +187,86 @@ This separation allows the same workflow to run with local or hosted models with
 
 ## Benchmarking instead of subjective inspection
 
-I added a benchmark framework so changes to the matching pipeline can be measured rather than judged only by manually reading recommendations.
+I built a benchmark framework so changes to the filtering and ranking pipeline can be evaluated quantitatively rather than judged only by manually inspecting recommendations.
 
-The benchmark covers:
+The benchmark measures:
 
 - deterministic filtering,
-- filter reason-code quality,
+- rejection-reason quality,
 - Precision@K and Recall@K,
-- nDCG,
+- nDCG@5 and nDCG@10,
 - Mean Reciprocal Rank,
-- latency.
+- ranking latency.
 
-### Frozen calibration set
+LLM-generated suitability reports are evaluated separately and are not part of the filtering/ranking benchmark.
 
-The calibration set contains **30 labeled jobs**:
+## Development benchmark suite
 
-- 17 expected to pass deterministic filtering,
-- 13 expected to be rejected,
-- 12 ranking-relevant jobs.
+The frozen development suite contains **four synthetic candidate scenarios** with **20 labelled job postings each**, for a total of **80 job cases**:
 
-After tuning the ranking configuration, the calibration dataset was frozen to prevent continued manual optimization against the same labels.
+- junior ML / AI candidate,
+- mid-level backend engineer,
+- junior data scientist,
+- manufacturing professional transitioning into data / ML.
 
-### Separate holdout evaluation
+Each scenario is evaluated with the same three ranking configurations:
 
-A separate **24-job holdout dataset was labeled and committed before the frozen configuration was run**.
+- `hybrid_default`,
+- `semantic_only`,
+- `deterministic_only`.
 
-On that unseen holdout set, CareerMatch achieved:
+All three configurations achieved **1.000 filtering F1** and **1.000 rejection-reason F1** across the four development scenarios.
 
-| Metric | Holdout result |
+For ranking:
+
+| Configuration | Mean nDCG@5 | Mean nDCG@10 |
+|---|---:|---:|
+| Hybrid | **0.8767** | **0.8976** |
+| Semantic only | 0.8277 | 0.8737 |
+| Deterministic only | 0.9129 | 0.9309 |
+
+The development suite was used for calibration and regression analysis, so these values should not be interpreted as independent estimates of real-world performance.
+
+## Frozen holdout evaluation
+
+After development, I evaluated the unchanged filtering and ranking pipeline on a separate frozen holdout suite containing **40 labelled job postings** across two previously unscored synthetic candidate scenarios:
+
+- junior multilingual NLP candidate,
+- junior ML serving / platform candidate.
+
+The holdout datasets, labels and checksums were frozen before the benchmark was executed. The ranking configurations were not retuned in response to the holdout results.
+
+Filtering performance across the two holdout scenarios was:
+
+| Metric | Macro mean |
 |---|---:|
-| Filtering accuracy | **1.000** |
-| Filtering F1 | **1.000** |
-| Reason-code F1 | **1.000** |
-| Precision@5 | **1.000** |
-| Recall@5 | **0.500** |
-| nDCG@5 | **0.803** |
-| Precision@10 | **0.900** |
-| Recall@10 | **0.900** |
-| nDCG@10 | **0.861** |
-| MRR | **1.000** |
+| Filtering F1 | **0.955** |
+| Rejection-reason F1 | **0.947** |
 
-![Calibration and holdout ranking benchmark](/images/projects/career-match/career-match-ranking-benchmark.png)
+Ranking performance was:
 
-These are **small project benchmark sets**, not claims of production-scale accuracy. Their purpose is to make architectural changes measurable and to separate tuning from basic generalization checks.
+| Configuration | Mean nDCG@5 | Mean nDCG@10 |
+|---|---:|---:|
+| Hybrid | **0.901** | **0.948** |
+| Semantic only | 0.897 | 0.940 |
+| Deterministic only | 0.959 | 0.936 |
 
-## Grounding validation on holdout recommendations
+![Development and frozen holdout ranking benchmark across hybrid, semantic-only and deterministic-only configurations](/images/projects/career-match/career_match_benchmark_graph.png)
 
-The top five holdout recommendations were also evaluated through the local Ollama report generator.
 
-Results:
+The results show that ranking behaviour depends on both the scenario and the evaluation cutoff. Deterministic-only achieved the highest mean nDCG@5 on the holdout suite, while hybrid ranking achieved the highest mean nDCG@10.
 
-- **5 / 5** reports completed successfully,
-- **0** report-generation failures,
-- **10.4** cited evidence items per report on average,
-- **100%** of evaluated reports contained evidence from both candidate and job contexts.
+These results measure agreement with the frozen synthetic relevance labels. They do **not** establish that one configuration is generally superior or represent real-world hiring accuracy.
 
-This does not prove that an LLM can never hallucinate. It verifies that, on this benchmark run, the complete evaluation pipeline produced structured reports that passed the project's grounding requirements.
+## What the evaluation revealed
 
-## Evaluation exposed a real bottleneck
+The holdout evaluation exposed two role-based filtering disagreements: one unexpected acceptance in each of the two scenarios.
 
-Benchmarking also identified an important limitation.
+That matters because the purpose of the benchmark is not to produce perfect-looking metrics. It is to expose concrete failure cases that can be preserved as regression tests and addressed in later engineering work without rewriting the original benchmark.
 
-On the holdout run:
+The benchmark therefore serves as both a performance-measurement framework and a mechanism for identifying weaknesses in filtering and ranking logic.
 
-- deterministic filtering took approximately **0.041 s**,
-- ranking took approximately **9.0 s**,
-- local LLM evaluation took approximately **36.8 minutes** for five reports.
-
-Local LLM inference therefore dominated end-to-end runtime.
-
-I keep this result visible because the purpose of the benchmark is not only to produce good-looking scores. It is also to identify which part of the system requires future optimization.
+Ranking latency measurements remain exploratory because model initialization and embedding warm-up are not yet standardized across repeated runs.
 
 ## Reusable workflow state
 
@@ -354,7 +364,7 @@ CareerMatch remains a **technical-alpha project**, not a production job-search p
 
 Current limitations include:
 
-- benchmark sets are intentionally small,
+- benchmark scenarios are synthetic and intentionally limited in scale,
 - job-provider coverage is still limited,
 - local LLM evaluation can be slow,
 - external provider behavior and listing availability can change,
@@ -381,7 +391,7 @@ I designed and implemented the system end to end, including:
 - evidence-grounded LLM evaluation and deterministic grounding validation,
 - Streamlit end-to-end workflow,
 - reusable workflow-state export/import,
-- benchmark calibration and holdout evaluation,
+- frozen development and holdout benchmark design, ablation evaluation and regression analysis,
 - automated tests, CI and code-quality tooling.
 
 ## What this project demonstrates
